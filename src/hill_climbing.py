@@ -287,7 +287,7 @@ def hill_climbing_hyperparameter_search(
 
     print(f"\n=== Final Results ===")
     print(f"Total configurations evaluated: {len(config_cache)}")
-    print(f"Best configuration: {current_config}")
+    print(f"Best configuration: {final_config}")
     print(f"Best Acc: {current_acc:.2f}")
 
     return current_model, current_config, current_acc, steps
