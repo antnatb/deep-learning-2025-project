@@ -164,9 +164,11 @@ def hill_climbing_hyperparameter_search(
     current_config = initial_config
     steps = []
     i=0
+    first_step_config = initial_config.copy()
+    first_step_config['tunable'] = first_step_config['tunable'].copy()
     log_matrix = {
         'step': 0,
-        'initial_step_config': initial_config.copy(),
+        'initial_step_config': first_step_config,
         'explored_configs': []
     }
     steps.append(log_matrix)
@@ -213,6 +215,7 @@ def hill_climbing_hyperparameter_search(
         log_step = log_matrix.copy()
         log_step['step'] = i
         log_step['current_config'] = current_config.copy()
+        log_step['current_config']['tunable'] = log_step['current_config']['tunable'].copy()
         log_step['current_config']['tunable'].pop('clip_model', None)
         log_step['current_acc'] = current_acc
         print(f"Current Acc: {current_acc:.2f}")
@@ -236,6 +239,7 @@ def hill_climbing_hyperparameter_search(
             for neighbor_value in neighbors:
                 # Create neighbor configuration
                 neighbor_config = current_config.copy()
+                neighbor_config['tunable'] = neighbor_config['tunable'].copy()
                 neighbor_config['tunable'][param_name] = neighbor_value
                 
                 print(f"\nTrying {param_name}: {current_value} -> {neighbor_value}")
@@ -249,6 +253,7 @@ def hill_climbing_hyperparameter_search(
                     scheduler_class=scheduler_class
                 )
                 neighbor_config_copy = neighbor_config.copy()
+                neighbor_config_copy['tunable'] = neighbor_config_copy['tunable'].copy()
                 neighbor_config_copy.pop('clip_model', None)
                 log_step['explored_configs'].append({
                     'config': neighbor_config_copy,
@@ -259,6 +264,7 @@ def hill_climbing_hyperparameter_search(
                 if neighbor_acc < best_neighbor_acc:
                     best_neighbor_acc = neighbor_acc
                     best_neighbor_config = neighbor_config.copy()
+                    best_neighbor_config['tunable'] = best_neighbor_config['tunable'].copy()
                     best_neighbor_model = model
 
         # Check if we found improvement
@@ -270,6 +276,7 @@ def hill_climbing_hyperparameter_search(
         else:
             print(f"\nNo improvement found or maximum iterations reached. Stopping hill climbing.")
             final_config = current_config.copy()
+            final_config['tunable'] = final_config['tunable'].copy()
             final_config.pop('clip_model', None)
             log_step['final_step_config'] = final_config
             log_step['final_step_acc'] = current_acc
