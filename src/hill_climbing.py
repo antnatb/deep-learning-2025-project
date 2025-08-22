@@ -261,14 +261,14 @@ def hill_climbing_hyperparameter_search(
                 })
 
                 # Keep track of best neighbor
-                if neighbor_acc < best_neighbor_acc:
+                if neighbor_acc > best_neighbor_acc:
                     best_neighbor_acc = neighbor_acc
                     best_neighbor_config = neighbor_config.copy()
                     best_neighbor_config['tunable'] = best_neighbor_config['tunable'].copy()
                     best_neighbor_model = model
 
         # Check if we found improvement
-        if best_neighbor_config and best_neighbor_acc < (current_acc) and i < max_steps:
+        if best_neighbor_config and best_neighbor_acc > current_acc and i < max_steps:
             print(f"Found better value from {current_acc} to {best_neighbor_acc}")
             current_config = best_neighbor_config
             current_acc = best_neighbor_acc
