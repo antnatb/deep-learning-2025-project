@@ -86,8 +86,6 @@ def train_model(model: nn.Module,
     best_model = nn.Identity().state_dict()
 
     for epoch in tqdm(range(num_epochs)):
-        print(f"\nEpoch {epoch+1}/{num_epochs}")
-        print("-" * 50)
 
         # Training phase
         train_loss, train_acc = train_one_epoch(model, train_loader, optimizer, scheduler, loss_function, device)
