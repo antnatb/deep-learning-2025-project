@@ -3,3 +3,4 @@ venv/
 
 # Ignore data directories
 data/
+__pycache__
