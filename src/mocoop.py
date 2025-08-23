@@ -14,11 +14,7 @@ HARD_GROUPS = [
     ["a photo of a type of flower: {}", "a photo of a type of flower: the {}."],    # flowers
     ["a photo of a {}.", "a photo of the {}."],                                     # generic
     ["a close-up photo of a {}.", "a macro photo of a {}."],                        # proximity
-    ["a cropped photo of a {}.", "a cropped photo of the {}."],                     # crops
-    ["a bright photo of a {}.", "a bright photo of the {}."],                       # brightness
-    ["a good photo of a {}.", "a good quality photo of a {}."],                     # good quality
-    ["a low resolution photo of a {}.", "a pixelated photo of a {}."],              # low resolution
-    ["itap of a {}.", "itap of the {}."]                                            # I took a picture of ...
+    ["a good photo of a {}.", "a good quality photo of a {}."]                     # good quality
 ]
 
 # function to encode text using CLIP's tokenizer and text encoder
@@ -63,6 +59,7 @@ class Router(nn.Module):
             self.net = nn.Sequential(
                 nn.Linear(input_dim, hidden_dim, bias=bias),
                 nn.ReLU(inplace=True),
+                nn.Dropout(p=0.5)
                 nn.Linear(hidden_dim, G, bias=bias)
             )
         else:
@@ -98,7 +95,7 @@ class TextEncoder(nn.Module):
 
 # prompt experts
 class PromptExperts(nn.Module):
-    def __init__(self, clip_model, class_names, n_ctx=16, hard_groups=None,
+    def __init__(self, clip_model, class_names, n_ctx=4, hard_groups=None,
                 top_k=2, tau=0.07, lambda_router=1.0, lambda_text=5.0,
                 router_hidden=0):
         super().__init__()
@@ -134,11 +131,6 @@ class PromptExperts(nn.Module):
         self.register_buffer("token_suffix", embedded_template_prompts[:, 1+n_ctx:, :]) # embedding of suffix (everything after context + EOT + padding): [num_classes, suffix_len, ctx_dim]
         self.tokenized_template_prompts = tokenized_template_prompts # will be useful later
 
-
-        # hard-template initialization: per expert g, take the FIRST template of its group.
-        # Split template at class placeholder, tokenize left/right parts separately,
-        # concatenate embeddings (excluding class tokens), truncate to n_ctx or pad with noise.
-        self._init_from_hard_templates(hard_groups)
 
         # text encoder
         self.text_encoder = TextEncoder(clip_model, self.token_prefix, self.token_suffix,
