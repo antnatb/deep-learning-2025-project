@@ -342,7 +342,7 @@ All implementations have been tested and validated on the Oxford Flowers 102 dat
 |--------|--------------|---------------|---------------|---------|
 | **MoCoOp** | **87.34%** | **74.70%** | **80.53%** | 🥇 1st |
 | **TSCoOp** | 86.40% | 74.20% | 79.85% | 🥈 2nd |
-| **CoOp** | 83.20% | 68.50% | 75.20% | 🥉 3rd |
+| **CoOp** | **92.94%** | **74.21%** | **82.32%** | 🥉 3rd |
 | **CLIP Zero-Shot** | 71.29% | 78.24% | 74.60% | 🏁 Baseline |
 
 ### Detailed Analysis
@@ -358,19 +358,21 @@ All implementations have been tested and validated on the Oxford Flowers 102 dat
 - The baseline provides a solid foundation for measuring prompt learning improvements
 
 #### 1. Base Class Performance
-- **MoCoOp** leads with 87.34% accuracy
-- **TSCoOp** closely follows with 86.40% (only 0.94% difference)
-- **CoOp** achieves 83.20% (4.14% behind MoCoOp)
+- **CoOp** leads with 92.94% accuracy (surprisingly high performance)
+- **MoCoOp** follows with 87.34% (5.60% behind CoOp)
+- **TSCoOp** achieves 86.40% (6.54% behind CoOp)
 
 #### 2. Novel Class Performance
-- **MoCoOp** maintains leadership with 74.70% accuracy
-- **TSCoOp** shows remarkable generalization with 74.20% (only 0.50% difference)
-- **CoOp** achieves 68.50% (6.20% behind MoCoOp)
+- **CLIP Zero-Shot** leads with 78.24% accuracy (best generalization)
+- **MoCoOp** follows with 74.70% (3.54% behind zero-shot)
+- **TSCoOp** achieves 74.20% (4.04% behind zero-shot)
+- **CoOp** achieves 74.21% (4.03% behind zero-shot, interestingly close to TSCoOp)
 
 #### 3. Harmonic Mean Analysis
-- **MoCoOp**: 80.53% - Best overall performance
+- **CoOp**: 82.32% - Best overall performance (excellent base class performance)
+- **MoCoOp**: 80.53% - Strong performance, good balance
 - **TSCoOp**: 79.85% - Excellent performance, very close to MoCoOp
-- **CoOp**: 75.20% - Solid baseline performance
+- **CLIP Zero-Shot**: 74.60% - Baseline performance
 
 ### Performance Visualization
 
@@ -412,13 +414,23 @@ Total Loss = Classification Loss + Router Regularization + Text Supervision
 
 ### Key Insights
 
-1. **MoCoOp's Superiority**: The mixture-of-experts approach provides the best balance between base and novel class performance.
+1. **CoOp's Exceptional Base Performance**: CoOp achieves the highest base class accuracy (92.94%), significantly outperforming other methods.
 
-2. **TSCoOp's Competitiveness**: Text supervision significantly improves performance, making TSCoOp nearly as effective as MoCoOp.
+2. **MoCoOp's Balanced Approach**: The mixture-of-experts approach provides excellent balance between base and novel class performance.
 
-3. **Generalization Gap**: All methods show a performance drop from base to novel classes, but MoCoOp and TSCoOp maintain better generalization.
+3. **TSCoOp's Competitiveness**: Text supervision significantly improves performance, making TSCoOp nearly as effective as MoCoOp.
 
-4. **Performance Margins**: The differences between top performers are surprisingly small, suggesting all three methods are effective.
+4. **The CoOp Paradox**: While CoOp achieves the best overall harmonic mean (82.32%), it shows an interesting trade-off:
+   - **Base classes**: 92.94% (excellent adaptation)
+   - **Novel classes**: 74.21% (slightly below zero-shot baseline of 77.01%)
+   - This suggests potential overfitting to base classes at the expense of generalization
+
+5. **CLIP Zero-Shot's Surprising Strength**: The pre-trained model shows remarkable generalization to novel classes (78.24%), outperforming all prompt learning methods on unseen data.
+
+6. **Generalization Gap**: All prompt learning methods show a performance drop from base to novel classes, but the magnitude varies significantly:
+   - CoOp: 18.73% drop (92.94% → 74.21%)
+   - MoCoOp: 12.64% drop (87.34% → 74.70%)
+   - TSCoOp: 12.20% drop (86.40% → 74.20%)
 
 ---
 
@@ -450,11 +462,12 @@ Total Loss = Classification Loss + Router Regularization + Text Supervision
 - **Reproducible results** with consistent hyperparameters
 
 ### Performance Improvements
+- **CoOp**: 7.72% improvement over CLIP zero-shot baseline (82.32% vs 74.60%)
 - **MoCoOp**: 5.93% improvement over CLIP zero-shot baseline (80.53% vs 74.60%)
 - **TSCoOp**: 5.25% improvement over CLIP zero-shot baseline (79.85% vs 74.60%)
-- **CoOp**: 0.60% improvement over CLIP zero-shot baseline (75.20% vs 74.60%)
 - **Significant gains** in base class performance through prompt learning
-- **Novel class performance** shows mixed results: CLIP zero-shot (78.24%) vs best prompt learning (74.70%)
+- **Novel class performance** shows interesting pattern: CLIP zero-shot (78.24%) outperforms all prompt learning methods
+- **CoOp paradox**: Excellent base class performance (92.94%) but slightly lower novel class performance (74.21%) compared to zero-shot (77.01%)
 
 ### Computational Efficiency
 - **Training time**: ~4.3 hours for 25 epochs
@@ -483,16 +496,17 @@ Total Loss = Classification Loss + Router Regularization + Text Supervision
 ### Performance Analysis Summary
 
 **Method Ranking by Performance**:
-1. **MoCoOp**: Best overall (80.53% H-mean) - 5.93% improvement over baseline
-2. **TSCoOp**: Excellent alternative (79.85% H-mean) - 5.25% improvement over baseline
-3. **CoOp**: Solid baseline (75.20% H-mean) - 0.60% improvement over baseline
+1. **CoOp**: Best overall (82.32% H-mean) - 7.72% improvement over baseline
+2. **MoCoOp**: Strong performance (80.53% H-mean) - 5.93% improvement over baseline
+3. **TSCoOp**: Excellent alternative (79.85% H-mean) - 5.25% improvement over baseline
 4. **CLIP Zero-Shot**: Reference baseline (74.60% H-mean) - No training required
 
 **Key Insights**:
 - All prompt learning methods improve upon CLIP zero-shot baseline
-- MoCoOp provides the most significant improvement (5.93%)
+- CoOp provides the most significant improvement (7.72%) due to exceptional base class performance
 - CLIP zero-shot shows surprisingly good novel class generalization (78.24%)
-- Prompt learning primarily improves base class performance while maintaining competitive novel class performance
+- **CoOp Paradox**: While CoOp achieves the best overall performance, it shows a trade-off between base and novel class performance
+- Prompt learning methods excel at base class adaptation but may struggle with generalization to completely unseen classes
 
 
 ## 📚 References
