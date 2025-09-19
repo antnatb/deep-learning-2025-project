@@ -1,0 +1,533 @@
+{
+    "pink primrose": [
+        "Evening primrose",
+        "Mexican primrose",
+        "Showy primrose",
+        "Oenothera speciosa",
+        "Pinkladies",
+        "Pink lady"
+    ],
+    "hard-leaved pocket orchid": [
+        "Grass-leaved orchid",
+        "Japanese pocket orchid"
+    ],
+    "canterbury bells": [],
+    "sweet pea": [
+        "lathyrus odoratus"
+    ],
+    "english marigold": [
+        "Pot Marigold",
+        "Calendula",
+        "Garden Marigold",
+        "Common Marigold"
+    ],
+    "tiger lily": [
+        "Lilium lancifolium",
+        "Lilium tigrinum",
+        "Devil Lily",
+        "Leopard Lily",
+        "Outhouse Lily"
+    ],
+    "moon orchid": [
+        "Phalaenopsis orchid",
+        "Phal orchid",
+        "Moth orchid"
+    ],
+    "bird of paradise": [
+        "Crane Flower",
+        "Strelitzia",
+        "Orange Bird of Paradise"
+    ],
+    "monkshood": [
+        "Aconitum",
+        "Wolfsbane",
+        "Devil's Helmet",
+        "Queen of Poisons",
+        "Blue Rocket",
+        "Helmet Flower"
+    ],
+    "globe thistle": [
+        "Echinops",
+        "echinops thistle"
+    ],
+    "snapdragon": [
+        "Dragon flower",
+        "Dog flower"
+    ],
+    "colt's foot": [
+        "Coughwort",
+        "Foalswort",
+        "Horsehoof",
+        "Clayweed",
+        "Ass's foot",
+        "Donnhove",
+        "Tussilago"
+    ],
+    "king protea": [
+        "Giant Protea",
+        "Honeypot",
+        "King Sugar Bush"
+    ],
+    "spear thistle": [
+        "Bull Thistle",
+        "Common Thistle",
+        "Lance Thistle"
+    ],
+    "yellow iris": [
+        "Yellow Flag",
+        "Yellow Flag Iris",
+        "Water Flag"
+    ],
+    "globe-flower": [
+        "Trollius",
+        "Globeflower"
+    ],
+    "purple coneflower": [
+        "Echinacea",
+        "Eastern purple coneflower"
+    ],
+    "peruvian lily": [
+        "Alstroemeria",
+        "Lily of the Incas",
+        "Princess Lily"
+    ],
+    "balloon flower": [
+        "Platycodon",
+        "Chinese Bellflower",
+        "Japanese Bellflower",
+        "Korean Bellflower"
+    ],
+    "giant white arum lily": [
+        "Calla Lily",
+        "White Arum Lily",
+        "Pig Lily",
+        "Trumpet Lily",
+        "Lily of the Nile",
+        "Ethiopian Lily"
+    ],
+    "fire lily": [
+        "Orange Lily",
+        "St. John's Lily"
+    ],
+    "pincushion flower": [
+        "Scabious"
+    ],
+    "fritillary": [
+        "Fritillaria",
+        "Snake's Head Fritillary",
+        "Chequered Lily",
+        "Crown Imperial",
+        "Guinea-hen flower"
+    ],
+    "red ginger": [
+        "Ostrich Plume",
+        "Jungle Queen",
+        "Jungle King",
+        "Tahitian Ginger"
+    ],
+    "grape hyacinth": [
+        "Muscari"
+    ],
+    "corn poppy": [
+        "common poppy",
+        "field poppy",
+        "Flanders poppy",
+        "Shirley poppy"
+    ],
+    "prince of wales feathers": [
+        "Feather Celosia",
+        "Plumed Celosia"
+    ],
+    "stemless gentian": [
+        "Trumpet Gentian",
+        "Alpine Gentian",
+        "Acaulis Gentian"
+    ],
+    "artichoke": [
+        "Globe Artichoke",
+        "French Artichoke",
+        "Cynara scolymus",
+        "Thistle Artichoke"
+    ],
+    "sweet william": [
+        "Dianthus barbatus",
+        "Bearded Pinks"
+    ],
+    "carnation": [
+        "Clove Pink",
+        "Dianthus caryophyllus",
+        "Grenadine"
+    ],
+    "garden phlox": [
+        "Summer Phlox",
+        "Tall Garden Phlox",
+        "Perennial Phlox",
+        "Border Phlox",
+        "Phlox paniculata"
+    ],
+    "love in the mist": [
+        "Nigella",
+        "Nigella damascena",
+        "Devil in the Bush",
+        "Lady-in-the-Bower"
+    ],
+    "mexican aster": [
+        "Cosmos",
+        "Cosmea",
+        "Garden Cosmos"
+    ],
+    "alpine sea holly": [
+        "Alpine Thistle",
+        "Alpine Eryngo"
+    ],
+    "ruby-lipped cattleya": [
+        "Cattleya",
+        "Cattleya orchid",
+        "Standard Cattleya",
+        "Autumn Cattleya"
+    ],
+    "cape flower": [
+        "Cape primrose",
+        "Streptocarpus"
+    ],
+    "great masterwort": [
+        "masterwort",
+        "Astrantia major"
+    ],
+    "siam tulip": [
+        "Curcuma alismatifolia",
+        "Summer Tulip",
+        "Tulip Ginger",
+        "Ginger Lily",
+        "Thai Tulip"
+    ],
+    "lenten rose": [
+        "Christmas Rose",
+        "Hellebore",
+        "Winter Rose"
+    ],
+    "barbeton daisy": [
+        "Gerbera Daisy",
+        "Transvaal Daisy",
+        "Veldt Daisy",
+        "Gerbera"
+    ],
+    "daffodil": [
+        "Narcissus",
+        "Jonquil",
+        "Lent Lily"
+    ],
+    "sword lily": [
+        "Gladiolus",
+        "Gladioli"
+    ],
+    "poinsettia": [
+        "Christmas flower",
+        "Christmas star",
+        "Nochebuena",
+        "Mexican flameleaf"
+    ],
+    "bolero deep blue": [
+        "Petunia 'Bolero Deep Blue'",
+        "Bolero Deep Blue Petunia",
+        "Bolero Petunia"
+    ],
+    "wallflower": [
+        "Gillyflower",
+        "Erysimum"
+    ],
+    "marigold": [
+        "calendula",
+        "pot marigold",
+        "African marigold",
+        "French marigold",
+        "Tagetes"
+    ],
+    "buttercup": [
+        "Crowfoot",
+        "Goldcup",
+        "Butter Rose",
+        "Kingcup"
+    ],
+    "oxeye daisy": [
+        "Dog daisy",
+        "Moon daisy",
+        "Moonpenny",
+        "Field daisy",
+        "Marguerite"
+    ],
+    "common dandelion": [
+        "Dandelion",
+        "Lion's Tooth",
+        "Blowball",
+        "Puffball",
+        "Piss-a-bed"
+    ],
+    "petunia": [
+        "Wave Petunia",
+        "Supertunia",
+        "Calibrachoa"
+    ],
+    "wild pansy": [
+        "Heartsease",
+        "Johnny Jump Up",
+        "Viola tricolor",
+        "Love-in-idleness",
+        "Tickle-my-fancy",
+        "Kiss-me-at-the-garden-gate",
+        "Three Faces in a Hood"
+    ],
+    "primula": [
+        "Primrose"
+    ],
+    "sunflower": [
+        "Common Sunflower",
+        "Helianthus annuus"
+    ],
+    "pelargonium": [
+        "Geranium",
+        "Storksbill"
+    ],
+    "bishop of llandaff": [
+        "Dahlia 'Bishop of Llandaff'",
+        "Bishop of Llandaff Dahlia"
+    ],
+    "gaura": [
+        "Whirling Butterflies",
+        "Lindheimer's Beeblossom",
+        "Beeblossom"
+    ],
+    "geranium": [
+        "cranesbill",
+        "pelargonium"
+    ],
+    "orange dahlia": [
+        ""
+    ],
+    "pink-yellow dahlia?": [],
+    "cautleya spicata": [
+        "Himalayan Ginger",
+        "Spiked Cautleya",
+        "Orange Ginger"
+    ],
+    "japanese anemone": [
+        "Windflower",
+        "Anemone hupehensis",
+        "Thimbleweed"
+    ],
+    "black-eyed susan": [
+        "Rudbeckia hirta",
+        "gloriosa daisy",
+        "yellow ox-eye daisy",
+        "brown-eyed susan",
+        "brown betty",
+        "coneflower",
+        "golden Jerusalem"
+    ],
+    "silverbush": [
+        "Shrubby Bindweed",
+        "Mediterranean Silverbush"
+    ],
+    "californian poppy": [
+        "Golden Poppy",
+        "California Poppy",
+        "Copa de Oro",
+        "Eschscholzia",
+        "State Flower of California"
+    ],
+    "osteospermum": [
+        "African daisy",
+        "Cape daisy",
+        "Spoon daisy",
+        "Dimorphotheca"
+    ],
+    "spring crocus": [
+        "Dutch Crocus",
+        "Crocus vernus"
+    ],
+    "bearded iris": [
+        "German Iris",
+        "Flag Iris"
+    ],
+    "windflower": [
+        "Anemone"
+    ],
+    "tree poppy": [
+        "Dendromecon",
+        "Matilija poppy",
+        "California tree poppy",
+        "bush poppy"
+    ],
+    "gazania": [
+        "Treasure Flower",
+        "African Daisy"
+    ],
+    "azalea": [
+        "Rhododendron",
+        "Shrub Azalea"
+    ],
+    "water lily": [
+        "Water Nymph",
+        "Lotus",
+        "Nymphaea"
+    ],
+    "rose": [
+        "Queen of Flowers"
+    ],
+    "thorn apple": [
+        "Datura",
+        "Jimsonweed",
+        "Devil's Snare",
+        "Devil's Trumpet",
+        "Hell's Bells",
+        "Stinkweed",
+        "Loco Weed",
+        "Pricklyburr",
+        "Moonflower"
+    ],
+    "morning glory": [
+        "bindweed",
+        "Heavenly Blue",
+        "Grandpa Ott",
+        "Ipomoea purpurea"
+    ],
+    "passion flower": [
+        "Passiflora",
+        "Maypop",
+        "Purple Passionflower",
+        "Christ's Crown"
+    ],
+    "lotus": [
+        "Sacred Lotus",
+        "Indian Lotus"
+    ],
+    "toad lily": [
+        "Tricyrtis",
+        "Japanese toad lily"
+    ],
+    "anthurium": [
+        "Flamingo Flower",
+        "Painter's Palette",
+        "Tailflower",
+        "Laceleaf"
+    ],
+    "frangipani": [
+        "Plumeria",
+        "Lei flower",
+        "Temple flower",
+        "Pagoda flower"
+    ],
+    "clematis": [
+        "Leather Flower",
+        "Vining Clematis",
+        "Virgin's Bower"
+    ],
+    "hibiscus": [
+        "Rose Mallow",
+        "China Rose",
+        "Shoeblackplant"
+    ],
+    "columbine": [
+        "Granny\u2019s Bonnet",
+        "Aquilegia",
+        "European Crowfoot"
+    ],
+    "desert-rose": [
+        "Adenium",
+        "Sabi Star",
+        "Kudu Lily",
+        "Mock Azalea",
+        "Impala Lily",
+        "Star of Lundi"
+    ],
+    "tree mallow": [
+        "Malva arborea",
+        "Lavatera arborea",
+        "sea mallow"
+    ],
+    "magnolia": [
+        "Mag",
+        "Magnolias"
+    ],
+    "cyclamen": [
+        "Persian violet",
+        "Sowbread",
+        "Alpine violet"
+    ],
+    "watercress": [
+        "Water rocket"
+    ],
+    "canna lily": [
+        "Canna",
+        "Indian Shot",
+        "Queensland Arrowroot"
+    ],
+    "hippeastrum": [
+        "Amaryllis",
+        "Christmas Amaryllis",
+        "Dutch Amaryllis"
+    ],
+    "bee balm": [
+        "Monarda",
+        "Wild bergamot",
+        "Oswego tea",
+        "Bergamot"
+    ],
+    "ball moss": [
+        "Small ball moss",
+        "Bunch moss"
+    ],
+    "foxglove": [
+        "Digitalis",
+        "Lady\u2019s Glove",
+        "Fairy Thimbles",
+        "Dead Man\u2019s Bells",
+        "Bloody Bells",
+        "Witches\u2019 Gloves",
+        "Lion\u2019s Mouth"
+    ],
+    "bougainvillea": [
+        "Paperflower",
+        "Trinitaria"
+    ],
+    "camellia": [
+        "Winter Rose",
+        "Japanese Camellia",
+        "Common Camellia"
+    ],
+    "mallow": [
+        "Malva",
+        "Cheeses",
+        "High Mallow",
+        "Common Mallow"
+    ],
+    "mexican petunia": [
+        "Ruellia",
+        "Mexican bluebell",
+        "Britton's wild petunia",
+        "Lavender bells",
+        "Florida petunia"
+    ],
+    "bromelia": [
+        "Bromeliad",
+        "Air Plant"
+    ],
+    "blanket flower": [
+        "Gaillardia",
+        "Indian Blanket",
+        "Firewheel"
+    ],
+    "trumpet creeper": [
+        "Trumpet Vine",
+        "Cow-itch Vine",
+        "Devil's Shoestring",
+        "Hellflower"
+    ],
+    "blackberry lily": [
+        "Leopard flower",
+        "Leopard lily",
+        "Belamcanda",
+        "Iris domestica",
+        "Apostle plant"
+    ]
+}

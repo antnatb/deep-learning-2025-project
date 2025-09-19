@@ -1,6 +1,9 @@
 import os
 import ast
+import re
+from time import sleep
 from dotenv import load_dotenv
+import json
 import google.generativeai as genai
 
 
@@ -16,19 +19,58 @@ api_key = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=api_key)
 
 # Pick a Gemini model (light and free-friendly: gemini-1.5-flash)
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("gemini-2.5-flash")
+aliases_dict = {}
 
 # Ask a question
-prompt = f"""Given a name of a plant/flower, complete the text with a list of its common aliases or other names usually used to identify the same specific flower.
+prompt = """Given a name of a plant/flower, complete the text with a list of its common aliases or other names usually used to identify the same specific flower.
 Answer with only the aliases for the given flower, in a Python list format, without any type of comment on any alias.
-Example of format:
+Format to use:
 Flower/Plant name: Flower1
-List of alternative names: ['Alias1', 'Alias2']
+List of alternative names: ['Alias1', 'Alias2', 'Alias3']
+Example:
+Flower/Plant name: Chrysanthemums
+List of alternative names: ['Mums', 'Chrysanths']
 Complete the following:
-Flower/Plant name: {CLASS_NAMES[92]}. List of alternative names: """
-print(prompt)
-response = model.generate_content(prompt)
+Flower/Plant name: {}. List of alternative names: """
+for flower in CLASS_NAMES:
+    formatted_prompt = prompt.format(flower)
+    max_retries = 3
+    retry_count = 0
+    
+    while retry_count < max_retries:
+        try:
+            response = model.generate_content(formatted_prompt)
+            print(response.text)
+            aliases = response.text.strip()
+            
+            # Use regex to extract only the list content between brackets
+            list_pattern = r'\[.*?\]'
+            match = re.search(list_pattern, aliases)
+            
+            if match:
+                list_string = match.group(0)
+                aliases_list = ast.literal_eval(list_string)
+                aliases_dict[flower] = aliases_list
+                break  # Success, exit retry loop
+            else:
+                raise ValueError("No list pattern found in response")
+        except ValueError as ve:
+            continue  # Retry on parsing errors
+        except Exception as e:
+            print(e)
+            retry_count += 1
+            print(f"Error processing {flower} (attempt {retry_count}/{max_retries}): {e}")
+            if retry_count < max_retries:
+                print("Waiting 60 seconds before retry...")
+                sleep(60)
+            else:
+                print(f"Failed to process {flower} after {max_retries} attempts")
 
 # Parse output
-answer = response.text.strip()
-print(answer)
+for flower, aliases in aliases_dict.items():
+    print(f"Flower/Plant name: {flower}. List of alternative names: {aliases}"
+)
+# save dict as json
+with open("flower_aliases.json", "w") as f:
+    json.dump(aliases_dict, f)
