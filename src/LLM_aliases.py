@@ -23,16 +23,29 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 aliases_dict = {}
 
 # Ask a question
-prompt = """Given a name of a plant/flower, complete the text with a list of its common aliases or other names usually used to identify the same specific flower.
-Answer with only the aliases for the given flower, in a Python list format, without any type of comment on any alias.
-Format to use:
-Flower/Plant name: Flower1
-List of alternative names: ['Alias1', 'Alias2', 'Alias3']
-Example:
+prompt = """You are a concise, factual assistant that returns only lists of aliases (no explanations).
+
+Instructions:
+1) Given the canonical Flower/Plant name after the colon, return ONLY its common aliases or other names typically used to identify that specific flower.
+2) Output must be a valid Python list literal (i.e. start with '[' and end with ']'). Example format exactly:
+   Flower/Plant name: Chrysanthemums
+   List of alternative names: ['Mums', 'Chrysanths']
+3) Do NOT include any text besides the Python list for the requested flower (no labels, no punctuation outside the list, no trailing whitespace, no comments).
+4) If there are no known aliases, return an empty list: []
+5) Preserve capitalization as commonly used for each alias; include multi-word aliases as single strings.
+6) If an alias is identical to the input name, do NOT repeat it.
+7) If you are unsure about a name, prefer returning fewer aliases rather than guessing. Do not hallucinate.
+
+Few-shot examples (must be followed exactly):
 Flower/Plant name: Chrysanthemums
 List of alternative names: ['Mums', 'Chrysanths']
-Complete the following:
-Flower/Plant name: {}. List of alternative names: """
+
+Flower/Plant name: Bellis perennis
+List of alternative names: ['English Daisy', 'Lawn Daisy', 'Common Daisy']
+
+Now complete for the requested flower:
+Flower/Plant name: {} 
+List of alternative names:"""
 for flower in CLASS_NAMES:
     formatted_prompt = prompt.format(flower)
     max_retries = 3
