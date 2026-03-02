@@ -8,7 +8,7 @@ This project investigates few-shot adaptation methods for CLIP (Contrastive Lang
 
 ## Key Findings
 
-We explored several parameter-efficient fine-tuning (PEFT) approaches including CoOp, CoCoOp, and KgCoOp. Our investigation revealed that **label engineering**—aligning class names with CLIP's training vocabulary—can be as impactful as sophisticated adaptation methods, significantly improving zero-shot accuracy.
+We explored several parameter-efficient fine-tuning (PEFT) approaches including CoOp, CoCoOp, and KgCoOp. Our investigation revealed that **label engineering** (i.e. aligning class names with CLIP's training vocabulary) can be as impactful as sophisticated adaptation methods, significantly improving zero-shot accuracy.
 
 ## Contents
 
@@ -16,8 +16,8 @@ We explored several parameter-efficient fine-tuning (PEFT) approaches including 
 
 ## Authors
 
-- Antonio N. Bruno (ID: 258035)
-- Edoardo Di Tommaso (ID: 258433)
+- Antonio N. Bruno 
+- Edoardo Di Tommaso 
 
 ## References
 
